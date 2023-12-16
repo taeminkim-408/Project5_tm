@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class BoardController {
@@ -24,9 +25,12 @@ public class BoardController {
     public String addPost(){
             return "addpostform";
     }
+
     @RequestMapping(value = "/addok",method = RequestMethod.POST)
-    public String addPostOK(BoardVO vo){
+    public String addPostOK(BoardVO vo, MultipartFile file){
         int i=boardService.insertBoard(vo);
+
+
         if(i==0)
             System.out.println("데이터추가실패");
         else

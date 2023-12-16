@@ -1,17 +1,57 @@
 package com.example.board;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class BoardVO {
 	private int seq;
 	private String title;
+	private String poster;
+
+	public String getPoster() {
+		return poster;
+	}
+
+	public void setPoster(String poster) {
+		this.poster = poster;
+	}
+
 	private String category;
+
+	public String getActor() {
+		return actor;
+	}
+
+	public void setActor(String actor) {
+		this.actor = actor;
+	}
+
+	private String actor;
 	private String writer;
 	private String content;
 	private Date regdate;
 	private int cnt;
 
+	public Date getYear() {
+		return Year;
+	}
 
+	public void setYear(Date year) {this.Year = year;
+	}
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date Year;
+	private double star;
+
+
+
+	public double getStar() {
+		return star;
+	}
+
+	public void setStar(double star) {
+		this.star = star;
+	}
 
 	public int getSeq() {
 		return seq;
